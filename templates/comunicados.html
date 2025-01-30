@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Telefónica</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+           <ul>
+               <li><a class="link" href="{{ url_for('cursos') }}">Cursos</a></li>
+               <li><a class="link" id="titulo" href="{{ url_for('index') }}">Telefónica</a></li>
+               <li><a class="link" href="{{ url_for('comunicados') }}">Comunicados</a></li>
+           </ul> 
+        </nav>
+        {% if 'user' in session %}
+            <a href="{{ url_for('logout') }}" class="login-btn" aria-label="Cerrar sesión">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        {% else %}
+            <a href="{{ url_for('login') }}" class="login-btn" aria-label="Login">
+                <i class="fas fa-user"></i>
+            </a>
+        {% endif %}
+    </header>
+    
+    <main>
+        <h1>Comunicados Importantes</h1>
+        <p>Aquí encontrarás todas las actualizaciones sobre eventos y nuevas actividades.</p>
+    </main>
+
+    <section class="contenedor_comunicado_multiple">
+        <div class="contenedor_comunicado_unico">
+            <a href="#comunicado1">
+                <img src="{{ url_for('static', filename='imagenes/comunicado1.png') }}" alt="Comunicado 1" class="imagen_comunicado">
+            </a>
+            <h3>Comunicado 04/02/2025</h3>
+        </div>
+        <div class="contenedor_comunicado_unico">
+            <a href="#comunicado2">
+                <img src="{{ url_for('static', filename='imagenes/comunicado2.png') }}" alt="Comunicado 2" class="imagen_comunicado">
+            </a>
+            <h3>Comunicado 21/01/2025</h3>
+        </div>
+        <div class="contenedor_comunicado_unico">
+            <a href="#comunicado3">
+                <img src="{{ url_for('static', filename='imagenes/comunicado3.png') }}" alt="Comunicado 3" class="imagen_comunicado">
+            </a>
+            <h3>Comunicado 07/01/2025</h3>
+        </div>
+    </section>
+
+
+    <!-- Sección de suscripción -->
+    <section class="suscripcion">
+        <h2>Suscríbete a nuestro boletín</h2>
+        <p>Recibe las últimas actualizaciones, comunicados y consejos exclusivos sobre nuestros cursos y eventos.</p>
+
+        <!-- Formulario de suscripción -->
+        <form method="POST" action="{{ url_for('guardar_correo') }}">
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <button type="submit">Suscribirse</button>
+        </form>
+
+        <!-- Mostrar mensaje después de la suscripción -->
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </section>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Política de Privacidad</a> |
+                <a href="{{ url_for('terminos') }}">Términos y Condiciones</a> |
+                <a href="{{ url_for('contacto') }}">Contacto</a>
+            </div>
+            <p>&copy; 2024 Proyecto Telefónica. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/estilos.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Telefonica</title>
+</head>
+<body>
+    <header>
+        <nav>
+           <ul>
+            <li><a class="link" href="{{ url_for('cursos') }}">Cursos</a></li>
+            <li><a class="link" id="titulo" href="{{ url_for('index') }}">Telefonica</a></li>
+            <li><a class="link" href="{{ url_for('comunicados') }}">Comunicados</a></li>
+           </ul> 
+        </nav>
+        {% if 'user' in session %}
+            <a href="{{ url_for('logout') }}" class="login-btn" aria-label="Cerrar sesión">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        {% else %}
+            <a href="{{ url_for('login') }}" class="login-btn" aria-label="Login">
+                <i class="fas fa-user"></i>
+            </a>
+        {% endif %}
+        </a>
+    </header>
+    <main>
+        <h1>Cursos de Arte</h1>
+        <p>Un espacio para mejorar tus habilidades artísticas a través de retos, cursos y quedadas donde podrás competir y aprender.</p>
+    </main>
+    <section class="cursos">
+        <a  class="curso" href="{{ url_for('puntillismo') }}">
+            <img src="../static/imagenes/lobo_portada.png" alt="Arte Puntillismo" class="imagen-arte">
+            <h3>Puntillismo</h3> 
+        </a>
+        <a  class="curso" href="{{ url_for('manchas') }}">
+            <img src="../static/imagenes/cara_portada.png" alt="Arte Manchas" class="imagen-arte">
+            <h3>Manchas</h3>
+        </a>
+
+        <a   class="curso" href="{{ url_for('pixelart') }}">
+            <img src="../static/imagenes/panda_portada.png" alt="Arte Pixelart" class="imagen-arte">
+            <h3>Pixelart</h3>
+        </a>
+
+        <a   class="curso" href="{{ url_for('geometrico') }}">
+            <img src="../static/imagenes/elefante_portada.png" alt="Arte Geometrico" class="imagen-arte">
+            <h3>Geométrico</h3>
+        </a>
+
+        <a   class="curso" href="{{ url_for('texturas') }}">
+            <img src="../static/imagenes/algodon_portada.png" alt="Arte Texturas" class="imagen-arte">
+            <h3>Texturas</h3>
+        </a>
+
+        <a   class="curso" href="{{ url_for('graffiti') }}">
+            <img src="../static/imagenes/grafitti_portada.png" alt="Arte Graffiti" class="imagen-arte">
+            <h3>Graffiti</h3>
+        </a>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Política de Privacidad</a> |
+                <a href="{{ url_for('terminos') }}">Términos y Condiciones</a> |
+                <a href="{{ url_for('contacto') }}">Contacto</a>
+            </div>
+            <p>&copy; 2024 Proyecto Telefónica. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+ 

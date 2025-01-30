@@ -1,0 +1,458 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Abril Fatface", serif;
+    font-style: normal;
+}
+
+body {
+    background-color: #f7eada;
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+}
+
+@media (max-width: 768px) {
+    nav {
+        width: 100%;
+    }
+    .cursos {
+        flex-direction: column;
+    }
+    .cursos .curso {
+        width: 100%;
+    }
+    .suscripcion form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .enlaces-redes a {
+        font-size: 1.2em;
+    }
+    .suscripcion form {
+        flex-direction: column;
+    }
+}
+
+/* Estilos para la barra de navegación */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+nav {
+    width: 50em;
+    background-color: #f7e6ca;
+    border-radius: 50px;
+    box-shadow: 4px 4px 10px #5b3a29;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+.login-btn {
+    position: absolute;
+    top: 20px; /* Ajusta según sea necesario */
+    right: 20px; /* Ajusta según sea necesario */
+    width: 50px;
+    height: 50px;
+    background-color: #8a675d;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-btn i {
+    font-size: 20px; /* Tamaño del ícono */
+}
+
+.login-btn:hover {
+    background-color: #5b3a29;
+    transform: scale(1.1);
+}
+
+nav ul li a {
+    color: #402b25;
+    font-size: 22px;
+    padding: 20px;
+    text-shadow: 1px 1px 2px rgb(67, 25, 0);
+    transition: font-size 0.4s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    transform: scale(1.1);
+}
+
+#titulo {
+    font-size: 30px;
+    padding: 10px;
+    color: #402b25;
+    text-shadow: 1px 1px 2px rgb(67, 25, 0);
+    transition: font-size 0.4s ease, color 0.3s ease;
+}
+
+#titulo:hover,
+nav ul li a:hover {
+    font-size: 2.5em;
+    color: #8a675d;
+}
+
+/* Estilos para el contenido principal */
+main {
+    text-align: center;
+    padding: 50px 10px;
+}
+
+main h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Botón */
+button {
+    padding: 15px 30px;
+    background-color: #8a675d;
+    color: #fff;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #5b3a29;
+    transform: scale(1.05);
+}
+
+/* Estilos de los cursos */
+.cursos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px;
+}
+
+.cursos .curso:hover {
+    transform: scale(1.05);
+}
+
+.cursos .imagen-arte {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    background-color: #eeeeef;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.imagen-arte:hover {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}
+
+.cursos h3 {
+    padding: 25px;
+    text-align: center;
+    color: #5b3a29;
+    width: 100%;
+    height: 20%;
+}
+
+.curso {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    margin: 20px;
+    overflow: hidden;
+    width: 375px;
+    height: 325px;
+    transition: transform 0.5s ease;
+}
+
+.curso:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para los comunicados */
+.contenedor_comunicado_multiple {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 20px;
+}
+
+.contenedor_comunicado_unico {
+    text-align: center;
+}
+
+.imagen_comunicado {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Sección Sobre Nosotros */
+.sobre-nosotros {
+    background-color: #fff;
+    padding: 40px 20px;
+    margin: 40px 0;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-nosotros h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.sobre-nosotros p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Sección Testimonios */
+.testimonios {
+    background-color: #f7e6ca;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.testimonios h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.testimonio {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+}
+
+.testimonio p {
+    font-style: italic;
+}
+
+/* Sección Suscripción */
+.suscripcion {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.suscripcion h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.suscripcion p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.suscripcion form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.suscripcion input {
+    padding: 10px;
+    font-size: 1.2em;
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+}
+
+.suscripcion button {
+    padding: 10px 20px;
+    background-color: #8a675d;
+    color: #fff;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.suscripcion button:hover {
+    background-color: #5b3a29;
+}
+
+/* Sección Redes Sociales */
+.redes-sociales {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.redes-sociales h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.enlaces-redes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.enlaces-redes a {
+    font-size: 1.5em;
+    color: #402b25;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.enlaces-redes a:hover {
+    color: #8a675d;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #402b25;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    font-size: 1.1em;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: #8a675d;
+}
+
+footer p {
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Estilos para la sección de contacto */
+.contacto {
+    background-color: #f7eada;
+    padding: 50px 20px;
+    text-align: center;
+    margin: 40px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contacto h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.contacto p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.contacto form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacto input,
+.contacto textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.contacto button {
+    padding: 10px 20px;
+    background-color: #8a675d;
+    color: #fff;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contacto button:hover {
+    background-color: #5b3a29;
+}
+/* Estilos para el texto de "Hola, usuario" */
+.hola-usuario {
+    position: absolute;
+    top: 50%;  /* Ajusta esta propiedad para centrar el texto verticalmente */
+    right: 20px;  /* Ajusta el valor según lo que necesites */
+    transform: translateY(-50%); /* Alinea el texto verticalmente */
+    font-size: 1.2em;
+    color: #402b25; /* Color del texto, puedes ajustarlo */
+}
+/* Aseguramos que el contenedor del usuario se alinee a la derecha */
+.usuario-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+}
+
+/* Opcional: Estilos para el texto de usuario */
+.usuario-nombre {
+    margin-right: 10px; /* Espaciado entre el nombre y los iconos */
+}

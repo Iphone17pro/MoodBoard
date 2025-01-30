@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/estilos.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Telefonica</title>
+</head>
+<body>
+    <header>
+        <nav>
+           <ul>
+                <li><a class="link" href="cursos.html">Cursos</a></li>
+                <li><a class="link" id="titulo" href="{{ url_for('index') }}">Telefonica</a></li>
+                <li><a class="link" href="comunicados.html">Comunicados</a></li>
+           </ul> 
+        </nav>
+        {% if 'user' in session %}
+            <a href="{{ url_for('logout') }}" class="login-btn" aria-label="Cerrar sesión">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        {% else %}
+            <a href="{{ url_for('login') }}" class="login-btn" aria-label="Login">
+                <i class="fas fa-user"></i>
+            </a>
+        {% endif %}
+    </header>
+    <main>
+        <h1>Tutorial Geométrico</h1>
+
+        <!-- Imagen de vista previa con enlace al video -->
+        <a href="https://drive.google.com/file/d/19K9HoLOZFX8YiTQO3Gmp0XNMONzZNYAN/view?usp=sharing" target="_blank">
+            <img src="{{ url_for('static', filename='imagenes/geometrico_tutorial_portada.png') }}" alt="Vista previa del tutorial geométrico" width="640">
+        </a>
+        
+        <p>Si quieres saber cómo hacer algo así, haz click en la imagen.</p>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Política de Privacidad</a> |
+                <a href="{{ url_for('terminos') }}">Términos y Condiciones</a> |
+                <a href="{{ url_for('contacto') }}">Contacto</a>
+            </div>
+            <p>&copy; 2025 Mi Sitio Web. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
